@@ -626,6 +626,60 @@ const movies = [
   { title:"Frozen",            genre:"Animation", rating:4, image:"fff.jpg",         trailer:"https://www.youtube.com/embed/TbQm5doF_Uc", desc:"A fearless princess sets off on an epic journey alongside a rugged iceman to find her estranged sister." },
   { title:"Minions",           genre:"Animation", rating:4, image:"mm.jpg",          trailer:"https://www.youtube.com/embed/eisKxhjBnZ0", desc:"The loveable yellow minions seek out the most despicable master to serve throughout history." },
   { title:"Kung Fu Panda",     genre:"Animation", rating:5, image:"ku.jpg",          trailer:"https://www.youtube.com/embed/PXi3Mv6KMzY", desc:"A bumbling panda must fulfill his destiny as the Dragon Warrior to protect the Valley of Peace." },
+  const moreMovies = [
+  { title:"The Dark Knight", genre:"Action", rating:5, image:"darkknight.jpg", trailer:"https://www.youtube.com/embed/EXeTwQWrcwY", desc:"Batman faces the Joker, a criminal mastermind who plunges Gotham into chaos." },
+  { title:"Iron Man", genre:"Action", rating:5, image:"ironman.jpg", trailer:"https://www.youtube.com/embed/8ugaeA-nMTc", desc:"Tony Stark builds a high-tech suit to escape captivity and becomes Iron Man." },
+  { title:"Black Panther", genre:"Action", rating:5, image:"blackpanther.jpg", trailer:"https://www.youtube.com/embed/xjDjIWPwcPU", desc:"T'Challa returns to Wakanda to take his place as king and protector." },
+  { title:"Thor", genre:"Fantasy", rating:4, image:"thor.jpg", trailer:"https://www.youtube.com/embed/JOddp-nlNvQ", desc:"The Norse god Thor is banished to Earth and must prove himself worthy." },
+  { title:"Captain America", genre:"Action", rating:4, image:"cap.jpg", trailer:"https://www.youtube.com/embed/JerVrbLldXw", desc:"Steve Rogers becomes a super soldier to fight Nazis in WWII." },
+
+  { title:"The Matrix", genre:"Sci-Fi", rating:5, image:"matrix.jpg", trailer:"https://www.youtube.com/embed/vKQi3bBA1y8", desc:"A hacker discovers reality is a simulation and joins a rebellion." },
+  { title:"Gladiator", genre:"Action", rating:5, image:"gladiator.jpg", trailer:"https://www.youtube.com/embed/owK1qxDselE", desc:"A betrayed Roman general seeks revenge in the arena." },
+  { title:"Fight Club", genre:"Drama", rating:5, image:"fightclub.jpg", trailer:"https://www.youtube.com/embed/qtRKdVHc-cE", desc:"An insomniac forms an underground fight club with a soap salesman." },
+  { title:"Forrest Gump", genre:"Drama", rating:5, image:"forrest.jpg", trailer:"https://www.youtube.com/embed/bLvqoHBptjg", desc:"A simple man experiences extraordinary events in American history." },
+  { title:"The Shawshank Redemption", genre:"Drama", rating:5, image:"shawshank.jpg", trailer:"https://www.youtube.com/embed/6hB3S9bIaco", desc:"Two imprisoned men bond over years, finding hope and redemption." },
+
+  { title:"The Godfather", genre:"Crime", rating:5, image:"godfather.jpg", trailer:"https://www.youtube.com/embed/sY1S34973zA", desc:"The aging patriarch transfers control of his empire to his son." },
+  { title:"The Godfather Part II", genre:"Crime", rating:5, image:"godfather2.jpg", trailer:"https://www.youtube.com/embed/9O1Iy9od7-A", desc:"The saga continues with Michael Corleone expanding his empire." },
+  { title:"Pulp Fiction", genre:"Crime", rating:5, image:"pulp.jpg", trailer:"https://www.youtube.com/embed/s7EdQ4FqbhY", desc:"Multiple crime stories intertwine in Quentin Tarantino’s classic." },
+  { title:"Django Unchained", genre:"Action", rating:5, image:"django.jpg", trailer:"https://www.youtube.com/embed/eUdM9vrCbow", desc:"A freed slave teams up with a bounty hunter to rescue his wife." },
+  { title:"Once Upon a Time in Hollywood", genre:"Drama", rating:4, image:"hollywood.jpg", trailer:"https://www.youtube.com/embed/ELeMaP8EPAA", desc:"A fading actor and stunt double navigate 1960s Hollywood." },
+
+  { title:"The Lion King", genre:"Animation", rating:5, image:"lionking.jpg", trailer:"https://www.youtube.com/embed/4sj1MT05lAA", desc:"A young lion prince flees his kingdom after tragedy." },
+  { title:"Toy Story", genre:"Animation", rating:5, image:"toystory.jpg", trailer:"https://www.youtube.com/embed/v-PjgYDrg70", desc:"Toys come to life when humans are not around." },
+  { title:"Finding Nemo", genre:"Animation", rating:5, image:"nemo.jpg", trailer:"https://www.youtube.com/embed/wZdpNglLbt8", desc:"A clownfish searches for his missing son." },
+  { title:"Up", genre:"Animation", rating:5, image:"up.jpg", trailer:"https://www.youtube.com/embed/HWEW_qTLSEE", desc:"An old man ties balloons to his house and flies away." },
+  { title:"Coco", genre:"Animation", rating:5, image:"coco.jpg", trailer:"https://www.youtube.com/embed/xlnPHQ3TLX8", desc:"A boy journeys into the Land of the Dead." },
+
+  { title:"Jurassic Park", genre:"Sci-Fi", rating:5, image:"jurassic.jpg", trailer:"https://www.youtube.com/embed/QWBKEmWWL38", desc:"Scientists clone dinosaurs for a theme park." },
+  { title:"Jaws", genre:"Thriller", rating:5, image:"jaws.jpg", trailer:"https://www.youtube.com/embed/U1fu_sA7XhE", desc:"A giant shark terrorizes a beach town." },
+  { title:"The Conjuring", genre:"Horror", rating:4, image:"conjuring.jpg", trailer:"https://www.youtube.com/embed/k10ETZ41q5o", desc:"Paranormal investigators help a haunted family." },
+  { title:"Annabelle", genre:"Horror", rating:3, image:"annabelle.jpg", trailer:"https://www.youtube.com/embed/KisPhy7T__Q", desc:"A possessed doll brings terror." },
+  { title:"IT", genre:"Horror", rating:4, image:"it.jpg", trailer:"https://www.youtube.com/embed/xKJmEC5ieOk", desc:"A group of kids face a terrifying clown." },
+
+  { title:"Deadpool", genre:"Action", rating:5, image:"deadpool.jpg", trailer:"https://www.youtube.com/embed/Xithigfg7dA", desc:"A wisecracking mercenary seeks revenge." },
+  { title:"Logan", genre:"Action", rating:5, image:"logan.jpg", trailer:"https://www.youtube.com/embed/Div0iP65aZo", desc:"An aging Wolverine protects a young mutant." },
+  { title:"Venom", genre:"Action", rating:4, image:"venom.jpg", trailer:"https://www.youtube.com/embed/u9Mv98Gr5pY", desc:"A journalist bonds with an alien symbiote." },
+  { title:"Aquaman", genre:"Fantasy", rating:4, image:"aquaman.jpg", trailer:"https://www.youtube.com/embed/WDkg3h8PCVU", desc:"The heir to Atlantis must reclaim his throne." },
+  { title:"Justice League", genre:"Action", rating:4, image:"justice.jpg", trailer:"https://www.youtube.com/embed/3cxixDgHUYw", desc:"Superheroes unite to save the world." },
+
+  { title:"Fast & Furious", genre:"Action", rating:4, image:"fast.jpg", trailer:"https://www.youtube.com/embed/2TAOizOnNPo", desc:"Street racers get involved in high-stakes crime." },
+  { title:"Hobbs & Shaw", genre:"Action", rating:4, image:"hobbs.jpg", trailer:"https://www.youtube.com/embed/HZ7PAyCDwEg", desc:"Two rivals team up against a cyber-enhanced villain." },
+  { title:"Transformers", genre:"Sci-Fi", rating:4, image:"transformers.jpg", trailer:"https://www.youtube.com/embed/v8ItGrI-Ou0", desc:"Robots in disguise battle on Earth." },
+  { title:"Pacific Rim", genre:"Sci-Fi", rating:4, image:"pacific.jpg", trailer:"https://www.youtube.com/embed/5guMumPFBag", desc:"Humans pilot giant robots to fight monsters." },
+  { title:"Edge of Tomorrow", genre:"Sci-Fi", rating:5, image:"edge.jpg", trailer:"https://www.youtube.com/embed/vw61gCe2oqI", desc:"A soldier relives the same day in battle." },
+
+  { title:"The Notebook", genre:"Romance", rating:4, image:"notebook.jpg", trailer:"https://www.youtube.com/embed/FC6biTjEyZw", desc:"A love story spanning decades." },
+  { title:"La La Land", genre:"Romance", rating:5, image:"lalaland.jpg", trailer:"https://www.youtube.com/embed/0pdqf4P9MB8", desc:"A musician and actress chase their dreams." },
+  { title:"Pride & Prejudice", genre:"Romance", rating:4, image:"pride.jpg", trailer:"https://www.youtube.com/embed/Ur_DIHs92NM", desc:"A classic tale of love and misunderstanding." },
+  { title:"Me Before You", genre:"Romance", rating:4, image:"mebeforeyou.jpg", trailer:"https://www.youtube.com/embed/Eh993__rOxA", desc:"A caretaker changes a disabled man's life." },
+  { title:"Twilight", genre:"Fantasy", rating:3, image:"twilight.jpg", trailer:"https://www.youtube.com/embed/QDRLSqm_WVg", desc:"A girl falls in love with a vampire." },
+
+  { title:"Shrek", genre:"Animation", rating:5, image:"shrek.jpg", trailer:"https://www.youtube.com/embed/CwXOrWvPBPk", desc:"An ogre goes on a quest to rescue a princess." },
+  { title:"Ice Age", genre:"Animation", rating:4, image:"iceage.jpg", trailer:"https://www.youtube.com/embed/i4noiCRJRoE", desc:"Animals survive the Ice Age together." },
+  { title:"Madagascar", genre:"Animation", rating:4, image:"madagascar.jpg", trailer:"https://www.youtube.com/embed/7qg7nY6u7wM", desc:"Zoo animals escape to the wild." },
+  { title:"Despicable Me", genre:"Animation", rating:5, image:"despicable.jpg", trailer:"https://www.youtube.com/embed/zzCZ1W_CUoI", desc:"A villain adopts three girls and changes." },
+  { title:"Ratatouille", genre:"Animation", rating:5, image:"ratatouille.jpg", trailer:"https://www.youtube.com/embed/c3sBBRxDAqk", desc:"A rat dreams of becoming a chef." },
 ];
 
 /* ── STATE ── */

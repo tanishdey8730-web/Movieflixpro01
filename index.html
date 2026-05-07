@@ -61,6 +61,19 @@
     .logo span { color: var(--text); }
 
     .nav-right { display: flex; align-items: center; gap: 12px; }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      margin-left: 28px;
+    }
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
 
     .search-wrap {
       position: relative;
@@ -207,6 +220,32 @@
       max-width: 420px;
     }
     .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(92px, 1fr));
+      gap: 10px;
+      max-width: 430px;
+      margin-bottom: 24px;
+    }
+    .hero-stat {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(10px);
+      padding: 10px 12px;
+    }
+    .hero-stat strong {
+      display: block;
+      font-size: 18px;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .hero-stat span {
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
     .btn-play {
       display: inline-flex; align-items: center; gap: 8px;
@@ -239,6 +278,28 @@
       backdrop-filter: blur(8px);
     }
     .btn-outline:hover { background: rgba(255,255,255,0.14); border-color: rgba(255,255,255,0.3); }
+    .btn-soft {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(244,162,97,0.14);
+      color: var(--text);
+      border: 1px solid rgba(244,162,97,0.35);
+      border-radius: 8px;
+      padding: 12px 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-soft:hover { background: rgba(244,162,97,0.24); transform: translateY(-2px); }
+    .load-online {
+      min-width: 190px;
+      justify-content: center;
+    }
+    .load-progress {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 6px;
+    }
 
     /* ── HERO DOTS ── */
     .hero-dots {
@@ -268,6 +329,11 @@
       color: var(--text);
     }
     .section-title span { color: var(--accent); }
+    .section-subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 3px;
+    }
     .see-all {
       font-size: 13px; color: var(--muted);
       background: none; border: none; cursor: pointer;
@@ -285,6 +351,58 @@
       scroll-snap-type: x mandatory;
     }
     .row::-webkit-scrollbar { height: 0; }
+    .controls-panel {
+      margin: -22px 40px 26px;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 14px;
+      align-items: center;
+      backdrop-filter: blur(14px);
+      position: relative;
+      z-index: 4;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(110px, 1fr));
+      gap: 10px;
+    }
+    .stat-card {
+      background: rgba(8,8,16,0.38);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .stat-card strong {
+      display: block;
+      font-size: 20px;
+      color: var(--text);
+    }
+    .stat-card span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .select-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+    #sortSelect {
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      outline: none;
+      font-family: 'DM Sans', sans-serif;
+    }
+    #sortSelect option { background: var(--surface); }
 
     /* ── MOVIE CARD ── */
     .movie-card {
@@ -332,6 +450,16 @@
       padding: 3px 8px;
       color: var(--muted);
     }
+    .card-quality {
+      position: absolute; bottom: 10px; right: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 500;
+      padding: 3px 7px;
+      color: #fff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+    }
     .card-fav {
       position: absolute; top: 10px; right: 10px;
       width: 30px; height: 30px;
@@ -374,6 +502,15 @@
       margin-bottom: 5px;
     }
     .card-stars { font-size: 11px; color: var(--gold); letter-spacing: 1px; }
+    .card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 7px;
+      gap: 8px;
+    }
 
     /* ── SEARCH RESULTS ── */
     #searchResults {
@@ -458,6 +595,20 @@
       color: var(--accent);
       padding: 3px 10px; border-radius: 4px; font-size: 12px;
     }
+    .modal-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 14px 0;
+    }
+    .modal-pill {
+      color: var(--text);
+      background: rgba(255,255,255,0.07);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 12px;
+    }
     .modal-stars { font-size: 18px; color: var(--gold); margin-bottom: 14px; }
     .modal-desc { font-size: 14px; line-height: 1.7; color: rgba(240,240,245,0.75); }
     .modal-actions { display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap; }
@@ -504,10 +655,14 @@
     /* ── RESPONSIVE ── */
     @media (max-width: 600px) {
       .navbar { padding: 0 16px; }
+      .nav-links { display: none; }
       .filter-bar { padding: 10px 16px; }
       .hero { padding: 40px 16px; }
       .section-head { padding: 0 16px; }
       .row { padding: 4px 16px 16px; }
+      .controls-panel { margin: -20px 16px 22px; grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero-stats { grid-template-columns: 1fr; }
       #search { width: 140px; } #search:focus { width: 180px; }
       .hero-title { font-size: 40px; }
     }
@@ -518,6 +673,12 @@
 <!-- ── NAVBAR ── -->
 <header class="navbar" id="navbar">
   <div class="logo">Movie<span>Flix</span> Pro</div>
+  <nav class="nav-links">
+    <a href="#trending">Trending</a>
+    <a href="#top-rated">Top Rated</a>
+    <a href="#new-releases">New Releases</a>
+    <a href="#my-list">My List</a>
+  </nav>
   <div class="nav-right">
     <div class="search-wrap">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
@@ -547,9 +708,15 @@
       <span id="heroGenre">Genre</span>
     </div>
     <p class="hero-desc" id="heroDesc">Watch the latest trending movie now</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><strong id="heroYear">2026</strong><span>Release</span></div>
+      <div class="hero-stat"><strong id="heroRuntime">2h</strong><span>Runtime</span></div>
+      <div class="hero-stat"><strong id="heroQuality">4K</strong><span>Quality</span></div>
+    </div>
     <div class="hero-actions">
       <button class="btn-play" id="heroPlay">▶ &nbsp;Play Trailer</button>
       <button class="btn-outline" id="heroWish">❤️ &nbsp;Add to List</button>
+      <button class="btn-soft" id="surpriseBtn">🎲 &nbsp;Surprise Me</button>
     </div>
   </div>
   <div class="hero-dots" id="heroDots"></div>
@@ -557,28 +724,71 @@
 
 <!-- ── MAIN ── -->
 <main>
+  <div class="controls-panel">
+    <div class="stats-grid">
+      <div class="stat-card"><strong id="movieCount">0</strong><span>Movies</span></div>
+      <div class="stat-card"><strong id="genreCount">0</strong><span>Genres</span></div>
+      <div class="stat-card"><strong id="avgRating">0.0</strong><span>Avg Rating</span></div>
+      <div class="stat-card"><strong id="listCount">0</strong><span>Saved</span></div>
+    </div>
+    <label class="select-wrap" for="sortSelect">Sort
+      <select id="sortSelect">
+        <option value="featured">Featured</option>
+        <option value="rating">Highest Rated</option>
+        <option value="newest">Newest</option>
+        <option value="az">A-Z</option>
+      </select>
+    </label>
+    <div>
+      <button class="btn-soft load-online" id="loadOnlineBtn">🌐 Load 10,000 Movies</button>
+      <div class="load-progress" id="loadProgress">Online catalog ready</div>
+    </div>
+    <button class="btn-soft" id="clearFilters">Reset</button>
+  </div>
+
   <!-- Trending -->
-  <div class="section">
+  <div class="section" id="trending">
     <div class="section-head">
-      <h2 class="section-title"><span>🔥</span> Trending Now</h2>
+      <div>
+        <h2 class="section-title"><span>🔥</span> Trending Now</h2>
+        <p class="section-subtitle">Hand-picked blockbusters with premium trailers.</p>
+      </div>
       <button class="see-all">See all</button>
     </div>
     <div class="row" id="trendingRow"></div>
   </div>
 
   <!-- Top Rated -->
-  <div class="section">
+  <div class="section" id="top-rated">
     <div class="section-head">
-      <h2 class="section-title"><span>⭐</span> Top Rated</h2>
+      <div>
+        <h2 class="section-title"><span>⭐</span> Top Rated</h2>
+        <p class="section-subtitle">The best-rated movies in the collection.</p>
+      </div>
       <button class="see-all">See all</button>
     </div>
     <div class="row" id="topRatedRow"></div>
   </div>
 
-  <!-- My List -->
-  <div class="section">
+  <!-- New Releases -->
+  <div class="section" id="new-releases">
     <div class="section-head">
-      <h2 class="section-title"><span>❤️</span> My List</h2>
+      <div>
+        <h2 class="section-title"><span>🆕</span> New Releases</h2>
+        <p class="section-subtitle">Fresh picks sorted by release year.</p>
+      </div>
+      <button class="see-all">See all</button>
+    </div>
+    <div class="row" id="newReleaseRow"></div>
+  </div>
+
+  <!-- My List -->
+  <div class="section" id="my-list">
+    <div class="section-head">
+      <div>
+        <h2 class="section-title"><span>❤️</span> My List</h2>
+        <p class="section-subtitle">Your saved watchlist stays on this browser.</p>
+      </div>
       <button class="see-all">See all</button>
     </div>
     <div class="row" id="wishlistRow"></div>
@@ -597,6 +807,7 @@
         <span id="modalStarsMeta"></span>
       </div>
       <div class="modal-stars" id="modalStars"></div>
+      <div class="modal-pills" id="modalPills"></div>
       <p class="modal-desc" id="modalDesc"></p>
       <div class="modal-actions">
         <button class="btn-play" id="modalWishBtn">❤️ &nbsp;Add to My List</button>
@@ -610,88 +821,81 @@
 
 <script>
 /* ── DATA ── */
-const movies = [
-  { title:"Inception",         genre:"Sci-Fi",    rating:5, image:"inception.jpg",  trailer:"https://www.youtube.com/embed/YoHD9XEInc0", desc:"A skilled thief is given a chance at redemption if he can successfully perform inception — planting an idea in someone's mind." },
-  { title:"Interstellar",      genre:"Sci-Fi",    rating:5, image:"jj.jpg",          trailer:"https://www.youtube.com/embed/zSWdZVtXT7E", desc:"A team of astronauts travel through a wormhole near Saturn in search of a new home for humanity." },
-  { title:"Titanic",           genre:"Romance",   rating:4, image:"titanic.jpg",     trailer:"https://www.youtube.com/embed/kVrqfYjkTdQ", desc:"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the ill-fated R.M.S. Titanic." },
-  { title:"Avatar",            genre:"Sci-Fi",    rating:5, image:"avatar.jpg",      trailer:"https://www.youtube.com/embed/5PSNL1qE6VY", desc:"A paraplegic Marine is dispatched to the moon Pandora on a unique mission, torn between duty and his new world." },
-  { title:"Avengers",          genre:"Action",    rating:5, image:"avangers.jpg",    trailer:"https://www.youtube.com/embed/eOrNdBpGMv8", desc:"Earth's mightiest heroes band together to stop Thanos from collecting all six Infinity Stones." },
-  { title:"Joker",             genre:"Drama",     rating:4, image:"jok.jpg",         trailer:"https://www.youtube.com/embed/zAGVQLHvwO",  desc:"A failed comedian's descent into madness and violence transforms him into the infamous Joker of Gotham City." },
-  { title:"Batman",            genre:"Action",    rating:4, image:"bd.jpg",          trailer:"https://www.youtube.com/embed/mqqft2x_Aa4", desc:"Bruce Wayne dons the cape and cowl to protect Gotham from its most dangerous criminals." },
-  { title:"Spider-Man",        genre:"Action",    rating:5, image:"sp.jpg",          trailer:"https://www.youtube.com/embed/t06RUxPbp_c", desc:"A teenage outcast with spider-like superpowers must balance high school life with saving New York City." },
-  { title:"Doctor Strange",    genre:"Fantasy",   rating:4, image:"dr.jpg",          trailer:"https://www.youtube.com/embed/HSzx-zryEgM", desc:"A brilliant neurosurgeon discovers the hidden world of magic and alternate dimensions after a car accident." },
-  { title:"John Wick",         genre:"Action",    rating:5, image:"jjk.jpg",         trailer:"https://www.youtube.com/embed/2AUmvWm5ZDQ", desc:"A retired hitman seeks vengeance after thieves break into his home, stealing his car and killing his dog." },
-  { title:"Mission Impossible",genre:"Action",    rating:5, image:"mmi.jpg",         trailer:"https://www.youtube.com/embed/FSZJuW8yqU4", desc:"Super-agent Ethan Hunt tackles impossible missions around the globe with style and breathtaking stunts." },
-  { title:"Harry Potter",      genre:"Fantasy",   rating:5, image:"hhh.jpg",         trailer:"https://www.youtube.com/embed/VyHV0BRtdxo", desc:"A young wizard discovers his magical heritage and attends Hogwarts School of Witchcraft and Wizardry." },
-  { title:"Frozen",            genre:"Animation", rating:4, image:"fff.jpg",         trailer:"https://www.youtube.com/embed/TbQm5doF_Uc", desc:"A fearless princess sets off on an epic journey alongside a rugged iceman to find her estranged sister." },
-  { title:"Minions",           genre:"Animation", rating:4, image:"mm.jpg",          trailer:"https://www.youtube.com/embed/eisKxhjBnZ0", desc:"The loveable yellow minions seek out the most despicable master to serve throughout history." },
-  { title:"Kung Fu Panda",     genre:"Animation", rating:5, image:"ku.jpg",          trailer:"https://www.youtube.com/embed/PXi3Mv6KMzY", desc:"A bumbling panda must fulfill his destiny as the Dragon Warrior to protect the Valley of Peace." },
-  const moreMovies = [
-  { title:"The Dark Knight", genre:"Action", rating:5, image:"darkknight.jpg", trailer:"https://www.youtube.com/embed/EXeTwQWrcwY", desc:"Batman faces the Joker, a criminal mastermind who plunges Gotham into chaos." },
-  { title:"Iron Man", genre:"Action", rating:5, image:"ironman.jpg", trailer:"https://www.youtube.com/embed/8ugaeA-nMTc", desc:"Tony Stark builds a high-tech suit to escape captivity and becomes Iron Man." },
-  { title:"Black Panther", genre:"Action", rating:5, image:"blackpanther.jpg", trailer:"https://www.youtube.com/embed/xjDjIWPwcPU", desc:"T'Challa returns to Wakanda to take his place as king and protector." },
-  { title:"Thor", genre:"Fantasy", rating:4, image:"thor.jpg", trailer:"https://www.youtube.com/embed/JOddp-nlNvQ", desc:"The Norse god Thor is banished to Earth and must prove himself worthy." },
-  { title:"Captain America", genre:"Action", rating:4, image:"cap.jpg", trailer:"https://www.youtube.com/embed/JerVrbLldXw", desc:"Steve Rogers becomes a super soldier to fight Nazis in WWII." },
-
-  { title:"The Matrix", genre:"Sci-Fi", rating:5, image:"matrix.jpg", trailer:"https://www.youtube.com/embed/vKQi3bBA1y8", desc:"A hacker discovers reality is a simulation and joins a rebellion." },
-  { title:"Gladiator", genre:"Action", rating:5, image:"gladiator.jpg", trailer:"https://www.youtube.com/embed/owK1qxDselE", desc:"A betrayed Roman general seeks revenge in the arena." },
-  { title:"Fight Club", genre:"Drama", rating:5, image:"fightclub.jpg", trailer:"https://www.youtube.com/embed/qtRKdVHc-cE", desc:"An insomniac forms an underground fight club with a soap salesman." },
-  { title:"Forrest Gump", genre:"Drama", rating:5, image:"forrest.jpg", trailer:"https://www.youtube.com/embed/bLvqoHBptjg", desc:"A simple man experiences extraordinary events in American history." },
-  { title:"The Shawshank Redemption", genre:"Drama", rating:5, image:"shawshank.jpg", trailer:"https://www.youtube.com/embed/6hB3S9bIaco", desc:"Two imprisoned men bond over years, finding hope and redemption." },
-
-  { title:"The Godfather", genre:"Crime", rating:5, image:"godfather.jpg", trailer:"https://www.youtube.com/embed/sY1S34973zA", desc:"The aging patriarch transfers control of his empire to his son." },
-  { title:"The Godfather Part II", genre:"Crime", rating:5, image:"godfather2.jpg", trailer:"https://www.youtube.com/embed/9O1Iy9od7-A", desc:"The saga continues with Michael Corleone expanding his empire." },
-  { title:"Pulp Fiction", genre:"Crime", rating:5, image:"pulp.jpg", trailer:"https://www.youtube.com/embed/s7EdQ4FqbhY", desc:"Multiple crime stories intertwine in Quentin Tarantino’s classic." },
-  { title:"Django Unchained", genre:"Action", rating:5, image:"django.jpg", trailer:"https://www.youtube.com/embed/eUdM9vrCbow", desc:"A freed slave teams up with a bounty hunter to rescue his wife." },
-  { title:"Once Upon a Time in Hollywood", genre:"Drama", rating:4, image:"hollywood.jpg", trailer:"https://www.youtube.com/embed/ELeMaP8EPAA", desc:"A fading actor and stunt double navigate 1960s Hollywood." },
-
-  { title:"The Lion King", genre:"Animation", rating:5, image:"lionking.jpg", trailer:"https://www.youtube.com/embed/4sj1MT05lAA", desc:"A young lion prince flees his kingdom after tragedy." },
-  { title:"Toy Story", genre:"Animation", rating:5, image:"toystory.jpg", trailer:"https://www.youtube.com/embed/v-PjgYDrg70", desc:"Toys come to life when humans are not around." },
-  { title:"Finding Nemo", genre:"Animation", rating:5, image:"nemo.jpg", trailer:"https://www.youtube.com/embed/wZdpNglLbt8", desc:"A clownfish searches for his missing son." },
-  { title:"Up", genre:"Animation", rating:5, image:"up.jpg", trailer:"https://www.youtube.com/embed/HWEW_qTLSEE", desc:"An old man ties balloons to his house and flies away." },
-  { title:"Coco", genre:"Animation", rating:5, image:"coco.jpg", trailer:"https://www.youtube.com/embed/xlnPHQ3TLX8", desc:"A boy journeys into the Land of the Dead." },
-
-  { title:"Jurassic Park", genre:"Sci-Fi", rating:5, image:"jurassic.jpg", trailer:"https://www.youtube.com/embed/QWBKEmWWL38", desc:"Scientists clone dinosaurs for a theme park." },
-  { title:"Jaws", genre:"Thriller", rating:5, image:"jaws.jpg", trailer:"https://www.youtube.com/embed/U1fu_sA7XhE", desc:"A giant shark terrorizes a beach town." },
-  { title:"The Conjuring", genre:"Horror", rating:4, image:"conjuring.jpg", trailer:"https://www.youtube.com/embed/k10ETZ41q5o", desc:"Paranormal investigators help a haunted family." },
-  { title:"Annabelle", genre:"Horror", rating:3, image:"annabelle.jpg", trailer:"https://www.youtube.com/embed/KisPhy7T__Q", desc:"A possessed doll brings terror." },
-  { title:"IT", genre:"Horror", rating:4, image:"it.jpg", trailer:"https://www.youtube.com/embed/xKJmEC5ieOk", desc:"A group of kids face a terrifying clown." },
-
-  { title:"Deadpool", genre:"Action", rating:5, image:"deadpool.jpg", trailer:"https://www.youtube.com/embed/Xithigfg7dA", desc:"A wisecracking mercenary seeks revenge." },
-  { title:"Logan", genre:"Action", rating:5, image:"logan.jpg", trailer:"https://www.youtube.com/embed/Div0iP65aZo", desc:"An aging Wolverine protects a young mutant." },
-  { title:"Venom", genre:"Action", rating:4, image:"venom.jpg", trailer:"https://www.youtube.com/embed/u9Mv98Gr5pY", desc:"A journalist bonds with an alien symbiote." },
-  { title:"Aquaman", genre:"Fantasy", rating:4, image:"aquaman.jpg", trailer:"https://www.youtube.com/embed/WDkg3h8PCVU", desc:"The heir to Atlantis must reclaim his throne." },
-  { title:"Justice League", genre:"Action", rating:4, image:"justice.jpg", trailer:"https://www.youtube.com/embed/3cxixDgHUYw", desc:"Superheroes unite to save the world." },
-
-  { title:"Fast & Furious", genre:"Action", rating:4, image:"fast.jpg", trailer:"https://www.youtube.com/embed/2TAOizOnNPo", desc:"Street racers get involved in high-stakes crime." },
-  { title:"Hobbs & Shaw", genre:"Action", rating:4, image:"hobbs.jpg", trailer:"https://www.youtube.com/embed/HZ7PAyCDwEg", desc:"Two rivals team up against a cyber-enhanced villain." },
-  { title:"Transformers", genre:"Sci-Fi", rating:4, image:"transformers.jpg", trailer:"https://www.youtube.com/embed/v8ItGrI-Ou0", desc:"Robots in disguise battle on Earth." },
-  { title:"Pacific Rim", genre:"Sci-Fi", rating:4, image:"pacific.jpg", trailer:"https://www.youtube.com/embed/5guMumPFBag", desc:"Humans pilot giant robots to fight monsters." },
-  { title:"Edge of Tomorrow", genre:"Sci-Fi", rating:5, image:"edge.jpg", trailer:"https://www.youtube.com/embed/vw61gCe2oqI", desc:"A soldier relives the same day in battle." },
-
-  { title:"The Notebook", genre:"Romance", rating:4, image:"notebook.jpg", trailer:"https://www.youtube.com/embed/FC6biTjEyZw", desc:"A love story spanning decades." },
-  { title:"La La Land", genre:"Romance", rating:5, image:"lalaland.jpg", trailer:"https://www.youtube.com/embed/0pdqf4P9MB8", desc:"A musician and actress chase their dreams." },
-  { title:"Pride & Prejudice", genre:"Romance", rating:4, image:"pride.jpg", trailer:"https://www.youtube.com/embed/Ur_DIHs92NM", desc:"A classic tale of love and misunderstanding." },
-  { title:"Me Before You", genre:"Romance", rating:4, image:"mebeforeyou.jpg", trailer:"https://www.youtube.com/embed/Eh993__rOxA", desc:"A caretaker changes a disabled man's life." },
-  { title:"Twilight", genre:"Fantasy", rating:3, image:"twilight.jpg", trailer:"https://www.youtube.com/embed/QDRLSqm_WVg", desc:"A girl falls in love with a vampire." },
-
-  { title:"Shrek", genre:"Animation", rating:5, image:"shrek.jpg", trailer:"https://www.youtube.com/embed/CwXOrWvPBPk", desc:"An ogre goes on a quest to rescue a princess." },
-  { title:"Ice Age", genre:"Animation", rating:4, image:"iceage.jpg", trailer:"https://www.youtube.com/embed/i4noiCRJRoE", desc:"Animals survive the Ice Age together." },
-  { title:"Madagascar", genre:"Animation", rating:4, image:"madagascar.jpg", trailer:"https://www.youtube.com/embed/7qg7nY6u7wM", desc:"Zoo animals escape to the wild." },
-  { title:"Despicable Me", genre:"Animation", rating:5, image:"despicable.jpg", trailer:"https://www.youtube.com/embed/zzCZ1W_CUoI", desc:"A villain adopts three girls and changes." },
-  { title:"Ratatouille", genre:"Animation", rating:5, image:"ratatouille.jpg", trailer:"https://www.youtube.com/embed/c3sBBRxDAqk", desc:"A rat dreams of becoming a chef." },
+let movies = [
+  { title:"Inception", genre:"Sci-Fi", rating:5, year:2010, runtime:"2h 28m", quality:"4K", image:"images/inception.jpg", trailer:"https://www.youtube.com/embed/YoHD9XEInc0", desc:"A skilled thief is given a chance at redemption if he can successfully perform inception — planting an idea in someone's mind." },
+  { title:"Interstellar", genre:"Sci-Fi", rating:5, year:2014, runtime:"2h 49m", quality:"4K", image:"images/jj.jpg", trailer:"https://www.youtube.com/embed/zSWdZVtXT7E", desc:"A team of astronauts travel through a wormhole near Saturn in search of a new home for humanity." },
+  { title:"Titanic", genre:"Romance", rating:4, year:1997, runtime:"3h 14m", quality:"HD", image:"images/titanic.jpg", trailer:"https://www.youtube.com/embed/kVrqfYjkTdQ", desc:"A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the ill-fated R.M.S. Titanic." },
+  { title:"Avatar", genre:"Sci-Fi", rating:5, year:2009, runtime:"2h 42m", quality:"4K", image:"images/avatar.jpg", trailer:"https://www.youtube.com/embed/5PSNL1qE6VY", desc:"A paraplegic Marine is dispatched to the moon Pandora on a unique mission, torn between duty and his new world." },
+  { title:"Avengers", genre:"Action", rating:5, year:2012, runtime:"2h 23m", quality:"4K", image:"images/avangers.jpg", trailer:"https://www.youtube.com/embed/eOrNdBpGMv8", desc:"Earth's mightiest heroes band together to stop Loki and save the world from invasion." },
+  { title:"Joker", genre:"Drama", rating:4, year:2019, runtime:"2h 2m", quality:"HD", image:"images/jok.jpg", trailer:"https://www.youtube.com/embed/zAGVQLHvwO", desc:"A failed comedian's descent into madness and violence transforms him into the infamous Joker of Gotham City." },
+  { title:"Batman", genre:"Action", rating:4, year:2022, runtime:"2h 56m", quality:"4K", image:"images/bd.jpg", trailer:"https://www.youtube.com/embed/mqqft2x_Aa4", desc:"Bruce Wayne dons the cape and cowl to protect Gotham from its most dangerous criminals." },
+  { title:"Spider-Man", genre:"Action", rating:5, year:2021, runtime:"2h 28m", quality:"4K", image:"images/sp.jpg", trailer:"https://www.youtube.com/embed/t06RUxPbp_c", desc:"A teenage outcast with spider-like superpowers must balance high school life with saving New York City." },
+  { title:"Doctor Strange", genre:"Fantasy", rating:4, year:2016, runtime:"1h 55m", quality:"4K", image:"images/dr.jpg", trailer:"https://www.youtube.com/embed/HSzx-zryEgM", desc:"A brilliant neurosurgeon discovers the hidden world of magic and alternate dimensions after a car accident." },
+  { title:"John Wick", genre:"Action", rating:5, year:2014, runtime:"1h 41m", quality:"4K", image:"images/jjk.jpg", trailer:"https://www.youtube.com/embed/2AUmvWm5ZDQ", desc:"A retired hitman seeks vengeance after thieves break into his home, stealing his car and killing his dog." },
+  { title:"Mission Impossible", genre:"Action", rating:5, year:2023, runtime:"2h 43m", quality:"4K", image:"images/mmi.jpg", trailer:"https://www.youtube.com/embed/FSZJuW8yqU4", desc:"Super-agent Ethan Hunt tackles impossible missions around the globe with style and breathtaking stunts." },
+  { title:"Harry Potter", genre:"Fantasy", rating:5, year:2001, runtime:"2h 32m", quality:"HD", image:"images/hhh.jpg", trailer:"https://www.youtube.com/embed/VyHV0BRtdxo", desc:"A young wizard discovers his magical heritage and attends Hogwarts School of Witchcraft and Wizardry." },
+  { title:"Frozen", genre:"Animation", rating:4, year:2013, runtime:"1h 42m", quality:"HD", image:"images/fff.jpg", trailer:"https://www.youtube.com/embed/TbQm5doF_Uc", desc:"A fearless princess sets off on an epic journey alongside a rugged iceman to find her estranged sister." },
+  { title:"Minions", genre:"Animation", rating:4, year:2015, runtime:"1h 31m", quality:"HD", image:"images/mm.jpg", trailer:"https://www.youtube.com/embed/eisKxhjBnZ0", desc:"The loveable yellow minions seek out the most despicable master to serve throughout history." },
+  { title:"Kung Fu Panda", genre:"Animation", rating:5, year:2008, runtime:"1h 32m", quality:"HD", image:"images/ku.jpg", trailer:"https://www.youtube.com/embed/PXi3Mv6KMzY", desc:"A bumbling panda must fulfill his destiny as the Dragon Warrior to protect the Valley of Peace." },
+  { title:"Oppenheimer", genre:"Biography", rating:5, year:2023, runtime:"3h 0m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/8Gxv8gSFCU0XGDykEGv7zR1n2ua.jpg", trailer:"https://www.youtube.com/embed/uYPbbksJxIg", desc:"The story of J. Robert Oppenheimer and the creation of the atomic bomb during a defining moment in history." },
+  { title:"Dune: Part Two", genre:"Sci-Fi", rating:5, year:2024, runtime:"2h 46m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/1pdfLvkbY9ohJlCjQH2CZjjYVvJ.jpg", trailer:"https://www.youtube.com/embed/Way9Dexny3w", desc:"Paul Atreides unites with Chani and the Fremen while seeking revenge against the conspirators who destroyed his family." },
+  { title:"Black Panther", genre:"Action", rating:5, year:2018, runtime:"2h 14m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg", trailer:"https://www.youtube.com/embed/xjDjIWPwcPU", desc:"T'Challa returns home to Wakanda and must defend his throne against a powerful challenger." },
+  { title:"The Matrix", genre:"Sci-Fi", rating:5, year:1999, runtime:"2h 16m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/f89U3ADr1oiB1s9GkdPOEpXUk5H.jpg", trailer:"https://www.youtube.com/embed/vKQi3bBA1y8", desc:"A hacker discovers reality is a simulated world and joins a rebellion against intelligent machines." },
+  { title:"Top Gun: Maverick", genre:"Action", rating:5, year:2022, runtime:"2h 11m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/62HCnUTziyWcpDaBO2i1DX17ljH.jpg", trailer:"https://www.youtube.com/embed/giXco2jaZ_4", desc:"Maverick trains a new generation of pilots for a dangerous mission that demands impossible precision." },
+  { title:"The Lion King", genre:"Animation", rating:5, year:1994, runtime:"1h 29m", quality:"HD", image:"https://image.tmdb.org/t/p/w500/sKCr78MXSLixwmZ8DyJLrpMsd15.jpg", trailer:"https://www.youtube.com/embed/7TavVZMewpY", desc:"A young lion prince must embrace his destiny after tragedy changes the future of the Pride Lands." },
+  { title:"La La Land", genre:"Romance", rating:4, year:2016, runtime:"2h 8m", quality:"HD", image:"https://image.tmdb.org/t/p/w500/uDO8zWDhfWwoFdKS4fzkUJt0Rf0.jpg", trailer:"https://www.youtube.com/embed/0pdqf4P9MB8", desc:"An aspiring actress and a jazz musician chase love and dreams across a glowing Los Angeles." },
+  { title:"Coco", genre:"Animation", rating:5, year:2017, runtime:"1h 45m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg", trailer:"https://www.youtube.com/embed/Ga6RYejo6Hk", desc:"A music-loving boy enters the Land of the Dead to uncover his family's hidden story." },
+  { title:"Parasite", genre:"Thriller", rating:5, year:2019, runtime:"2h 12m", quality:"HD", image:"https://image.tmdb.org/t/p/w500/7IiTTgloJzvGI1TAYymCfbfl3vT.jpg", trailer:"https://www.youtube.com/embed/5xH0HfJHsaY", desc:"A poor family infiltrates a wealthy household in a sharp thriller about class, ambition, and deception." },
+  { title:"The Dark Knight", genre:"Action", rating:5, year:2008, runtime:"2h 32m", quality:"4K", image:"https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", trailer:"https://www.youtube.com/embed/EXeTwQWrcwY", desc:"Batman faces his greatest test when the Joker unleashes chaos across Gotham City." },
+  { title:"Inside Out", genre:"Animation", rating:4, year:2015, runtime:"1h 35m", quality:"HD", image:"https://image.tmdb.org/t/p/w500/2H1TmgdfNtsKlU9jKdeNyYL5y8T.jpg", trailer:"https://www.youtube.com/embed/yRUAzGQ3nSY", desc:"The emotions inside a young girl's mind guide her through a major move and big life changes." },
 ];
 
 /* ── STATE ── */
 let wishlist = JSON.parse(localStorage.getItem('mfp_wishlist') || '[]');
 let activeGenre = 'All';
+let sortMode = 'featured';
 let heroIdx = 0;
 let heroTimer;
+let moviesMap = {};
 
 /* ── UTILS ── */
 function stars(n) { return '★'.repeat(n) + '☆'.repeat(5-n); }
 function saveWishlist() { localStorage.setItem('mfp_wishlist', JSON.stringify(wishlist)); }
 function isWishlisted(title) { return wishlist.some(m => m.title === title); }
+function refreshMoviesMap() { moviesMap = Object.fromEntries(movies.map(m => [m.title, m])); }
+function normalizeOnlineMovie(movie) {
+  const genres = movie.genres || [];
+  const rating = Math.max(1, Math.min(5, Math.round((movie.rating || 6) / 2)));
+  return {
+    title: movie.title_long || movie.title,
+    genre: genres[0] || 'Movie',
+    rating,
+    year: movie.year || 'Classic',
+    runtime: movie.runtime ? `${Math.floor(movie.runtime / 60)}h ${movie.runtime % 60}m` : 'Feature Film',
+    quality: 'HD',
+    image: movie.large_cover_image || movie.medium_cover_image || 'https://via.placeholder.com/180x260/13131f/888?text=Movie',
+    trailer: movie.yt_trailer_code ? `https://www.youtube.com/embed/${movie.yt_trailer_code}` : 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+    desc: movie.description_full || movie.summary || 'A movie from the online open catalog.'
+  };
+}
+function dedupeMovies(list) {
+  return [...new Map(list.filter(m => m.title).map(m => [m.title, m])).values()];
+}
+function visibleMovies() {
+  const base = activeGenre === 'All' ? [...movies] : movies.filter(m => m.genre === activeGenre);
+  if (sortMode === 'rating') return base.sort((a, b) => b.rating - a.rating || b.year - a.year);
+  if (sortMode === 'newest') return base.sort((a, b) => b.year - a.year);
+  if (sortMode === 'az') return base.sort((a, b) => a.title.localeCompare(b.title));
+  return base;
+}
+function updateStats(data=visibleMovies()) {
+  const genres = new Set(movies.map(m => m.genre));
+  const avg = data.reduce((sum, m) => sum + m.rating, 0) / (data.length || 1);
+  document.getElementById('movieCount').textContent = data.length;
+  document.getElementById('genreCount').textContent = genres.size;
+  document.getElementById('avgRating').textContent = avg.toFixed(1);
+  document.getElementById('listCount').textContent = wishlist.length;
+}
 
 function toast(msg, icon='✅') {
   document.getElementById('toastMsg').textContent = msg;
@@ -716,9 +920,49 @@ function buildFilterBar() {
   }));
 }
 
+async function loadOnlineMovies(target=10000) {
+  const btn = document.getElementById('loadOnlineBtn');
+  const progress = document.getElementById('loadProgress');
+  const perPage = 50;
+  const maxPages = Math.ceil(target / perPage);
+  btn.disabled = true;
+  btn.textContent = '⏳ Loading...';
+  progress.textContent = 'Fetching open catalog from YTS...';
+  try {
+    const onlineMovies = [];
+    for (let page = 1; page <= maxPages; page++) {
+      const res = await fetch(`https://yts.mx/api/v2/list_movies.json?limit=${perPage}&page=${page}&sort_by=download_count`);
+      if (!res.ok) throw new Error('Online catalog request failed');
+      const json = await res.json();
+      const fetched = json?.data?.movies || [];
+      if (!fetched.length) break;
+      onlineMovies.push(...fetched.map(normalizeOnlineMovie));
+      if (page % 10 === 0 || page === 1) {
+        progress.textContent = `Loaded ${onlineMovies.length.toLocaleString()} / ${target.toLocaleString()} movies...`;
+        await new Promise(resolve => setTimeout(resolve, 0));
+      }
+      if (onlineMovies.length >= target) break;
+    }
+    movies = dedupeMovies([...movies, ...onlineMovies]).slice(0, target + 50);
+    refreshMoviesMap();
+    buildFilterBar();
+    setHero(0);
+    renderSections();
+    progress.textContent = `${movies.length.toLocaleString()} movies loaded`;
+    toast(`Loaded ${movies.length.toLocaleString()} movies`, '🌐');
+  } catch (error) {
+    progress.textContent = 'Could not load online catalog. Check internet/CORS.';
+    toast('Online movie loading failed', '⚠️');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '🌐 Load 10,000 Movies';
+  }
+}
+
 /* ── HERO ── */
-const featuredMovies = movies.filter(m => m.rating === 5);
 function setHero(idx) {
+  const featuredMovies = movies.filter(m => m.rating === 5);
+  if (!featuredMovies.length) return;
   heroIdx = (idx + featuredMovies.length) % featuredMovies.length;
   const m = featuredMovies[heroIdx];
   document.getElementById('heroBg').style.backgroundImage = `url(${m.image})`;
@@ -726,11 +970,15 @@ function setHero(idx) {
   document.getElementById('heroGenre').textContent = m.genre;
   document.getElementById('heroRating').textContent = '⭐'.repeat(m.rating);
   document.getElementById('heroDesc').textContent = m.desc;
+  document.getElementById('heroYear').textContent = m.year;
+  document.getElementById('heroRuntime').textContent = m.runtime;
+  document.getElementById('heroQuality').textContent = m.quality;
   document.getElementById('heroPlay').onclick = () => openModal(m);
   document.getElementById('heroWish').onclick = () => toggleWishlist(m.title);
   updateHeroDots();
 }
 function updateHeroDots() {
+  const featuredMovies = movies.filter(m => m.rating === 5).slice(0, 12);
   const wrap = document.getElementById('heroDots');
   wrap.innerHTML = featuredMovies.map((_, i) =>
     `<div class="h-dot${i===heroIdx?' active':''}" onclick="setHero(${i})"></div>`
@@ -749,6 +997,7 @@ function createCard(movie, delay=0) {
     <div class="card-img-wrap">
       <img src="${movie.image}" alt="${movie.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/180x260/13131f/888?text=${encodeURIComponent(movie.title)}'">
       <div class="card-genre">${movie.genre}</div>
+      <div class="card-quality">${movie.quality || 'HD'}</div>
       <button class="card-fav${loved?' loved':''}" onclick="event.stopPropagation();toggleWishlist('${movie.title}')" title="Add to My List" id="fav-${CSS.escape(movie.title)}">${loved?'❤️':'🤍'}</button>
       <div class="card-overlay">
         <button class="play-btn-sm">▶</button>
@@ -757,24 +1006,28 @@ function createCard(movie, delay=0) {
     <div class="card-body">
       <div class="card-title">${movie.title}</div>
       <div class="card-stars">${stars(movie.rating)}</div>
+      <div class="card-meta"><span>${movie.year || 'Classic'}</span><span>${movie.runtime || 'Movie'}</span></div>
     </div>
   </div>`;
 }
 
 function renderRow(id, data) {
   const el = document.getElementById(id);
+  const displayData = data.slice(0, 60);
   if (!data.length) {
     el.innerHTML = `<div class="empty-state"><span>🎬</span>Nothing here yet.</div>`;
     return;
   }
-  el.innerHTML = data.map((m, i) => createCard(m, i * 50)).join('');
+  el.innerHTML = displayData.map((m, i) => createCard(m, i * 18)).join('');
 }
 
 function renderSections() {
-  const filtered = activeGenre === 'All' ? movies : movies.filter(m => m.genre === activeGenre);
+  const filtered = visibleMovies();
   renderRow('trendingRow', filtered);
   renderRow('topRatedRow', filtered.filter(m => m.rating === 5));
+  renderRow('newReleaseRow', [...filtered].sort((a, b) => b.year - a.year).slice(0, 12));
   renderWishlist();
+  updateStats(filtered);
 }
 
 function renderWishlist() {
@@ -810,7 +1063,8 @@ function openModal(m) {
   document.getElementById('modalTitle').textContent = m.title;
   document.getElementById('modalGenre').textContent = m.genre;
   document.getElementById('modalStars').textContent = stars(m.rating);
-  document.getElementById('modalStarsMeta').textContent = m.rating + '/5';
+  document.getElementById('modalStarsMeta').textContent = `${m.rating}/5 · ${m.year}`;
+  document.getElementById('modalPills').innerHTML = [`${m.runtime || 'Feature Film'}`, `${m.quality || 'HD'}`, `${m.year || 'Classic'}`].map(p => `<span class="modal-pill">${p}</span>`).join('');
   document.getElementById('modalDesc').textContent = m.desc;
   const wb = document.getElementById('modalWishBtn');
   wb.textContent = isWishlisted(m.title) ? '✅  In My List' : '❤️  Add to My List';
@@ -827,7 +1081,6 @@ document.getElementById('modalClose').addEventListener('click', closeModal);
 document.getElementById('modal').addEventListener('click', e => { if (e.target === document.getElementById('modal')) closeModal(); });
 
 /* ── SEARCH ── */
-const moviesMap = Object.fromEntries(movies.map(m => [m.title, m]));
 const searchEl = document.getElementById('search');
 const srPanel = document.getElementById('searchResults');
 
@@ -835,8 +1088,8 @@ searchEl.addEventListener('input', e => {
   const q = e.target.value.trim().toLowerCase();
   if (!q) { srPanel.style.display = 'none'; return; }
   const hits = movies.filter(m =>
-    m.title.toLowerCase().includes(q) || m.genre.toLowerCase().includes(q)
-  );
+    m.title.toLowerCase().includes(q) || m.genre.toLowerCase().includes(q) || String(m.year).includes(q)
+  ).slice(0, 30);
   srPanel.style.display = 'block';
   if (!hits.length) {
     srPanel.innerHTML = `<div class="sr-empty">No movies found for "<strong>${q}</strong>"</div>`;
@@ -847,7 +1100,7 @@ searchEl.addEventListener('input', e => {
       <img src="${m.image}" alt="${m.title}" onerror="this.src='https://via.placeholder.com/44x60/13131f/888?text=?'">
       <div class="sr-info">
         <div class="sr-title">${m.title}</div>
-        <div class="sr-meta">${m.genre} · ${stars(m.rating)}</div>
+        <div class="sr-meta">${m.genre} · ${m.year} · ${stars(m.rating)}</div>
       </div>
     </div>
   `).join('');
@@ -865,12 +1118,36 @@ themeBtn.addEventListener('click', () => {
   themeBtn.textContent = dark ? '🌙' : '☀️';
 });
 
+document.getElementById('sortSelect').addEventListener('change', e => {
+  sortMode = e.target.value;
+  renderSections();
+});
+
+document.getElementById('clearFilters').addEventListener('click', () => {
+  activeGenre = 'All';
+  sortMode = 'featured';
+  document.getElementById('sortSelect').value = 'featured';
+  buildFilterBar();
+  renderSections();
+  toast('Filters reset', '✨');
+});
+
+document.getElementById('surpriseBtn').addEventListener('click', () => {
+  const pick = movies[Math.floor(Math.random() * movies.length)];
+  openModal(pick);
+});
+
+document.getElementById('loadOnlineBtn').addEventListener('click', () => {
+  loadOnlineMovies(10000);
+});
+
 /* ── SCROLL NAVBAR ── */
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
 });
 
 /* ── INIT ── */
+refreshMoviesMap();
 buildFilterBar();
 setHero(0);
 startHeroAuto();
